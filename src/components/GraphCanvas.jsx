@@ -153,7 +153,7 @@ export default function GraphCanvas({ adjMatrix, updAdjMatrix, mouseState, edgeC
                     graphInfo.stateHelpVar = i;
                 }
                 else if (mouseState === MouseState.CreatingEdge) {
-                    if (graphInfo.stateHelpVar !== null) {
+                    if (graphInfo.stateHelpVar !== null && graphInfo.stateHelpVar !== graphInfo.vertexes[i]) {
                         graphInfo.edges.push(new Edge(graphInfo.vertexes[graphInfo.stateHelpVar], graphInfo.vertexes[i]));
                         
                         let copy = Array.from(adjMatrix);

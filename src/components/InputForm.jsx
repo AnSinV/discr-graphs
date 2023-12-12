@@ -18,6 +18,8 @@ export default function InputForm({ adjMatrix, updAdjMatrix, updColors }) {
     function changeValue(e) {
         let [i, j] = e.target.dataset.cellid.split("_").map(Number);
 
+        if (i == j) return;
+
         let copy = Array.from(adjMatrix);
         copy[j][i] = copy[i][j] = Number(!copy[i][j]);
 
